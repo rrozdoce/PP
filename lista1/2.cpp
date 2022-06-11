@@ -260,36 +260,36 @@ int main(void)
   Dponto ponto2(5.0, 5);
   Dponto ponto3(9.0, 1);
 
-  	triangulo tri1(ponto1, ponto2, ponto3);
-	cout << ponto1.calculoDistancia(ponto2) <<endl;
-	cout << ponto1.calculoDistancia(ponto3) << endl;
-	cout << ponto2.calculoDistancia(ponto3) << endl;
-	cout <<"A area do triangulo eh " << tri1.area() <<endl;
+  triangulo tri1(ponto1, ponto2, ponto3);
+  cout << ponto1.calculoDistancia(ponto2) << endl;
+  cout << ponto1.calculoDistancia(ponto3) << endl;
+  cout << ponto2.calculoDistancia(ponto3) << endl;
+  cout << "A area do triangulo eh " << tri1.area() << endl;
 
-	if (tri1.eh_equilatero())
-	{
-		cout << "O triangulo eh equilatero " << endl;
-	}
-	if (tri1.eh_escaleno())
-	{
-		cout << "O triangulo eh escaleno" << endl;
-	}
-	if (tri1.eh_isosceles())
-	{
-		cout << "O triangulo eh isosceles" << endl;
-	}
-	if (tri1.eh_obtusangulo())
-	{
-		cout << "O triangulo eh obtusangulo" << endl;
-	}
-	if (tri1.eh_retangulo())
-	{
-		cout << "O triangulo eh retangulo" << endl;
-	}
-	if (tri1.eh_acutangulo())
-	{
-		cout << "O triangulo eh acutangulo" << endl;
-	}
+  if (tri1.eh_equilatero())
+  {
+    cout << "O triangulo eh equilatero " << endl;
+  }
+  if (tri1.eh_escaleno())
+  {
+    cout << "O triangulo eh escaleno" << endl;
+  }
+  if (tri1.eh_isosceles())
+  {
+    cout << "O triangulo eh isosceles" << endl;
+  }
+  if (tri1.eh_obtusangulo())
+  {
+    cout << "O triangulo eh obtusangulo" << endl;
+  }
+  if (tri1.eh_retangulo())
+  {
+    cout << "O triangulo eh retangulo" << endl;
+  }
+  if (tri1.eh_acutangulo())
+  {
+    cout << "O triangulo eh acutangulo" << endl;
+  }
 
   return 0;
 }
