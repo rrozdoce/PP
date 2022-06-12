@@ -4,7 +4,7 @@ using namespace std;
 
 class arranjo
 {
-    friend void pertence(arranjo, int);
+    friend bool pertence(arranjo, int);
     friend void inserir(arranjo, int);
     friend void remover(arranjo, int);
 
@@ -45,41 +45,20 @@ void arranjo::getArranjo()
     }
 }
 
-void pertence(arranjo a, int x)
+bool pertence(arranjo a, int x)
 {
     int i, f, m;
     i = 0;
     f = 10 - 1;
 
-    while (i <= f)
-    {
-        m = (i + f) / 2;
-
-        if (x == a.n[m])
-        {
-
-            break;
-        }
-        if (x < a.n[m])
-        {
-
-            f = m - 1;
-        }
-        else
-        {
-
-            f = m + 1;
-        }
+    while(i <= f){
+        m = (i + f)/2;
+        if(x == a.n[m]) return true;
+        if(x < a.n[m]) f = m - 1;
+        else           i = m + 1;
     }
 
-    /*     if (x != a.n[m])
-        {
-            cout << "Nao pertence" << endl;
-        }
-        else
-        {
-            cout << "Pertence" << endl;
-        } */
+    return false;
 }
 
 int main(void)
@@ -88,14 +67,8 @@ int main(void)
 
     arranjo p;
     p.setArranjo();
-    p.getArranjo();
+    cout << pertence(p, 10);
 
-    // problema
-    /*     
-    cout << "Digite um item para busca: " << endl;
-    cin >> item;
-    pertence(p, item); 
-    */
 
     return 0;
 }
