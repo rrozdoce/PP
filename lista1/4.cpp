@@ -121,6 +121,8 @@ int main(void)
     arranjo p;
     p.setArranjo();
     p.inserir(10);
+    p.remover(10);
+    p.getArranjo();
     // cout << pertence(p, 10);
 
     return 0;
