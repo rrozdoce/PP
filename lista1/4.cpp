@@ -9,7 +9,6 @@ class arranjo
 public:
     arranjo();
     ~arranjo();
-    void setArranjo(void);
     void getArranjo(void);
     void inserir(int);
     bool remover(int);
@@ -35,21 +34,14 @@ arranjo::~arranjo()
     delete[] n;
 }
 
-void arranjo::setArranjo()
-{
-    for (int i = 0; i < 10; i++)
-    {
-        cout << "n[" << i + 1 << "]" << endl;
-        cin >> n[i];
-    }
-}
-
 void arranjo::getArranjo()
 {
     for (int i = 0; i < 10; i++)
     {
         cout << "n[" << i + 1 << "]: " << n[i] << endl;
     }
+
+    cout << endl;
 }
 
 bool pertence(arranjo &a, int x)
@@ -119,10 +111,19 @@ int main(void)
     int item;
 
     arranjo p;
-    p.setArranjo();
     p.inserir(10);
-    p.remover(10);
+    p.inserir(9);
+    p.inserir(8);
+    p.inserir(7);
+    p.inserir(6);
+    p.inserir(5);
+    p.inserir(4);
+    p.inserir(3);
+    p.inserir(2);
+    p.inserir(1);
     p.getArranjo();
+    cout << pertence(p, 8); // true
+    cout << pertence(p, 11); // false
     // cout << pertence(p, 10);
 
     return 0;
