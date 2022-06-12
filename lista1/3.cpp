@@ -111,15 +111,7 @@ void somaMatriz(matriz a, matriz b)
 void multMatriz(matriz a, matriz b)
 {
     float(*multi)[2] = new float[2][2];
-
-    // ainda a implementar
-    /*for (int i = 0; i < 2; i++)
-    {
-        for (int j = 0; j < 2; j++)
-        {
-        }
-    } */
-
+    
     // provisório
     multi[0][0] = (a.m[0][0] * b.m[0][0]) + (a.m[0][1] * b.m[1][0]);
     multi[0][1] = (a.m[0][0] * b.m[0][1]) + (a.m[0][1] * b.m[1][1]);
