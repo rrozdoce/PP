@@ -88,12 +88,14 @@ int main(void)
 
     arranjo p;
     p.setArranjo();
-
-    cout << "Digite um item para busca: " << endl;
-    cin >> item;
+    p.getArranjo();
 
     // problema
-    // pertence(p, item);
+    /*     
+    cout << "Digite um item para busca: " << endl;
+    cin >> item;
+    pertence(p, item); 
+    */
 
     return 0;
 }
