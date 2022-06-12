@@ -4,7 +4,7 @@ using namespace std;
 
 class arranjo
 {
-    friend bool pertence(arranjo, int);
+    friend bool pertence(arranjo&, int);
 
 public:
     arranjo();
@@ -52,7 +52,7 @@ void arranjo::getArranjo()
     }
 }
 
-bool pertence(arranjo a, int x)
+bool pertence(arranjo &a, int x)
 {
     int i, f, m;
     i = 0;
