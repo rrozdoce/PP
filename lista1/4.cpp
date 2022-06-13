@@ -4,14 +4,14 @@ using namespace std;
 
 class arranjo
 {
-    friend bool pertence(arranjo&, int);
+    friend bool pertence(arranjo &, int);
 
 public:
     arranjo();
     ~arranjo();
     void getArranjo(void);
     void inserir(int);
-    bool remover(int);
+    bool remover();
     int topo(void);
     bool vazia(void);
     bool cheia(void);
@@ -72,7 +72,7 @@ void arranjo::inserir(int x)
         cout << "Pilha cheia!" << endl;
 }
 
-bool arranjo::remover(int x)
+bool arranjo::remover()
 {
     if (!vazia())
     {
@@ -122,8 +122,6 @@ int main(void)
     p.inserir(2);
     p.inserir(1);
     p.getArranjo();
-    cout << pertence(p, 8); // true
-    cout << pertence(p, 11); // false
     // cout << pertence(p, 10);
 
     return 0;
