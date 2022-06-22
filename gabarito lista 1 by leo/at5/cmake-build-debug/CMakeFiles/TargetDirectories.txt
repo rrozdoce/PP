@@ -1,0 +1,3 @@
+/home/AD/rgm43566/Área de Trabalho/monitoria/gabarito lista 1/at5/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/AD/rgm43566/Área de Trabalho/monitoria/gabarito lista 1/at5/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/AD/rgm43566/Área de Trabalho/monitoria/gabarito lista 1/at5/cmake-build-debug/CMakeFiles/at5.dir
