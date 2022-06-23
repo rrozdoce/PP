@@ -1,3 +1,6 @@
+
+#ifndef PILHA_H
+#define PILHA_H
 class Pilha
 {
 public:
@@ -13,3 +16,5 @@ private:
     int max_tam;
     int topo;
 };
+
+#endif
