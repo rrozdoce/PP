@@ -3,23 +3,30 @@
 
 using namespace std;
 
-int main(int argc, char const *argv[])
-{ 
-    vector<int> v;
-    
-    // vai inserir ao final do vetor
-    v.push_back(20);
-    v.push_back(30);
-    v.push_back(40);
-    
-    // tamanho do vetor
-    int tam = v.size();
+class Ponto
+{
+public:
+	int x, y;
 
-    for (int i = 0; i < tam; i++)
-    {
-        cout << v[i] << endl;
-    }
-    
- 
-    return 0;
+	Ponto(int x, int y)
+	{
+		this->x = x;
+		this->y = y;
+	}
+};
+
+int main(int argc, char *argv[])
+{
+	vector<Ponto*> vet;
+	vector<Ponto*>::iterator it;
+	Ponto* p1 = new Ponto(1, 2);
+	Ponto* p2 = new Ponto(3, 4);
+
+	vet.push_back(p1);
+	vet.push_back(p2);
+
+	for(it = vet.begin(); it != vet.end(); it++)
+		cout << "(" << (*it)->x << ", " << (*it)->y << ")\n";
+
+	return 0;
 }
