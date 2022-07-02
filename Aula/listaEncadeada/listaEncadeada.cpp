@@ -11,7 +11,8 @@ class No
 {
 private:
     int v;
-    No* prox;
+    No *prox;
+
 public:
     No(int v) // construtor
     {
@@ -24,12 +25,12 @@ public:
         return v;
     }
 
-    No* obterProx() // obtém o próximo No
+    No *obterProx() // obtém o próximo No
     {
         return prox;
     }
 
-    void setProx(No* p) // seta o próximo No
+    void setProx(No *p) // seta o próximo No
     {
         prox = p;
     }
@@ -39,8 +40,8 @@ public:
 class Lista
 {
 private:
-    No* cabeca; // primeiro elemento
-    No* cauda; // último elemento
+    No *cabeca; // primeiro elemento
+    No *cauda;  // último elemento
 
 public:
     Lista()
@@ -65,13 +66,13 @@ public:
     void mostrar() // mostra todos os elementos da lista
     {
         cout << "\nImprimindo todos os elementos...\n";
-        No* c = cabeca;
+        No *c = cabeca;
 
-        if(vazia())
+        if (vazia())
             cout << "A lista NAO possui elementos!!\n";
         else
         {
-            while(c) // percorre a lista
+            while (c) // percorre a lista
             {
                 cout << c->obterValor() << endl;
                 c = c->obterProx();
@@ -88,9 +89,9 @@ public:
     // insere no início (semelhante a push_front da list)
     void inserir_inicio(int v)
     {
-        No* novo_no = new No(v);
+        No *novo_no = new No(v);
 
-        if(vazia())
+        if (vazia())
         {
             cabeca = novo_no;
             cauda = novo_no;
@@ -105,9 +106,9 @@ public:
     // insere no final (semelhante a push_back da list)
     void inserir_final(int v)
     {
-        No* novo_no = new No(v);
+        No *novo_no = new No(v);
 
-        if(vazia())
+        if (vazia())
         {
             cabeca = novo_no;
             cauda = novo_no;
@@ -122,10 +123,10 @@ public:
     // retorna o tamanho da lista
     int tamanho()
     {
-        if(vazia()) // se for vazia, entã retorna 0
+        if (vazia()) // se for vazia, entã retorna 0
             return 0;
 
-        No* c = cabeca;
+        No *c = cabeca;
         int tam = 0;
 
         // percorre a lista
@@ -133,8 +134,7 @@ public:
         {
             c = c->obterProx();
             tam++;
-        }
-        while(c);
+        } while (c);
 
         return tam;
     }
@@ -142,11 +142,11 @@ public:
     // verifica se um elemento existe na lista
     bool existe(int v)
     {
-        No* c = cabeca;
+        No *c = cabeca;
 
-        while(c)
+        while (c)
         {
-            if(c->obterValor() == v)
+            if (c->obterValor() == v)
                 return true;
             c = c->obterProx();
         }
@@ -156,29 +156,29 @@ public:
     // remove da lista, remoção do final (semelhante a pop_back da list)
     void remover()
     {
-        if(!vazia())
+        if (!vazia())
         {
             // se houver só 1 elemento
-            if(cabeca->obterProx() == NULL)
+            if (cabeca->obterProx() == NULL)
                 cabeca = NULL;
-            else if(cabeca->obterProx()->obterProx() == NULL) // 2 elementos
+            else if (cabeca->obterProx()->obterProx() == NULL) // 2 elementos
                 cabeca->setProx(NULL);
             else // > 2 elementos
             {
-                No* ant_ant = cabeca;
-                No* ant = cabeca->obterProx();
-                No* corrente = cabeca->obterProx()->obterProx();
+                No *ant_ant = cabeca;
+                No *ant = cabeca->obterProx();
+                No *corrente = cabeca->obterProx()->obterProx();
 
-                while(corrente)
+                while (corrente)
                 {
-                    No* aux = ant;
+                    No *aux = ant;
                     ant = corrente;
                     ant_ant = aux;
                     corrente = corrente->obterProx();
                 }
                 delete ant_ant->obterProx(); // libera memória
-                ant_ant->setProx(NULL); // seta o prox como NULL
-                cauda = ant_ant; // atualiza a cauda
+                ant_ant->setProx(NULL);      // seta o prox como NULL
+                cauda = ant_ant;             // atualiza a cauda
             }
         }
     }
@@ -188,14 +188,14 @@ int main(int argc, char *argv[])
 {
     Lista l;
 
-    if(l.vazia())
+    if (l.vazia())
         cout << "Lista vazia!!\n";
     else
         cout << "Lista NAO vazia!!\n";
 
     l.mostrar();
 
-    if(l.existe(10))
+    if (l.existe(10))
         cout << "\nO elemento 10 existe na lista!!\n";
     else
         cout << "\nO elemento 10 NAO existe na lista!!\n";
@@ -208,12 +208,12 @@ int main(int argc, char *argv[])
 
     l.mostrar();
 
-    if(l.vazia())
+    if (l.vazia())
         cout << "Lista vazia!!\n";
     else
         cout << "Lista NAO vazia!!\n";
 
-    if(l.existe(10))
+    if (l.existe(10))
         cout << "\nO elemento 10 existe na lista!!\n";
     else
         cout << "\nO elemento 10 NAO existe na lista!!\n";
